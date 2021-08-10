@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생들의 점수 읽기</title>
+</head>
+<body>
+    점수 : <input type="text" name="point"><br/>
+    <input type="button" name="btnPoint" value="입력하기" onclick="getPoint()"><br/>
+    <input type="button" name="btnCalc" value="계산하기" onclick="getResult()"><br/>
+</body>
+<script>
+    var arPoint = []; // arPoint.length
+
+    function getPoint() {
+        //point의 정수값을 읽어서 추가하기
+        arPoint.push(document.getElementsByName("point")[0].value);
+    }
+    function getResult() {
+        // 합계/평균을 구해서 alert으로 출력
+        // 합계 : xxxx
+        // 평균 : xx.xx
+        var sum = 0;
+        var avg = 0;
+        for(i = 0; i < arPoint.length; i++) {
+            sum = sum + Number(arPoint[i]);
+        }
+        avg = sum/arPoint.length
+        alert("합계 : " + sum + '\n' + "평균 : " + avg)
+    }
+</script>
+</html>
