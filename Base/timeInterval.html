@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="time" /><br/>
+    <input type="button" name="btnSetTime" value="타이머시작" onclick="getResult()" /><br/>
+    <input type="button" name="btnSetTime" value="타이머멈춤" onclick="doStop()" /><br/>
+</body>
+<script>
+    let gn;
+    let timer;
+    function getResult() {
+        alert("타이머가 시작됩니다.");
+        gn = 1;
+        timer = setInterval(showText, 1000);
+    }
+    function showText() {
+        document.getElementsByName("time")[0].value = gn + "초가 지났습니다.";
+        gn += 1;
+    }
+    function doStop() {
+        clearInterval(timer);
+        document.getElementsByName("time")[0].value = (gn - 1) + "초에서 타이머 멈춤.";
+    }
+</script>
+</html>
