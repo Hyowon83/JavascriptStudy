@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    @인풋 타입 알아보기@<br />
+    text : <input type="text" /><br />
+    radio : <input type="radio" name="gender" />남자<input type="radio" name="gender" />여자<br /><!-- name이 같으면 중복체크 불가 -->
+    checkbox : <input type="checkbox" /><br />
+    file : <input type="file" /><br />
+    password : <input type="password" /><br />
+    submit : <input type="submit" /><br />
+    button : <input type="button" value="button" /><br />
+    number : <input type="number" /><br />
+    date : <input type="date" /><br />
+    select : <br />
+    <select size="5">
+        <option>Korea</option>
+        <option>USA</option>
+        <option>France</option>
+        <option>China</option>
+    </select><br />
+    textarea : <br />
+    <textarea cols="30" rows="10"></textarea>
+    <br />
+    <br />
+    <br />
+    <!-- <input type="text" name="pname" id="fname" /><br /><br /> [0]
+    <input type="text" name="pname" id="fname" /><br /><br /> [1]
+    <input type="button" name="btnGo" id="btnRun" value="이름보이기" onclick="setName()" /> -->
+
+    이름 : <input type="text" name="pname" id="fname" /><br /><br />
+    번호 : <input type="text" name="pnum" id="fnum" /><br /><br />
+    지역 : <input type="text" name="ploc" id="floc" /><br /><br />
+    <input type="button" name="btnGo" id="btnShow" value="Show" onclick="show()" />
+
+</body>
+<script>
+    /*
+    function setName() {
+        k1 = document.getElementsByName("pname")[0].value;
+        k2 = document.getElementsByName("pname")[1].value;
+        alert(k1 + '\n' + k2);
+    }
+    */
+
+    function show() {
+        mname = document.getElementsByName("pname")[0].value;
+        num = document.getElementsByName("pnum")[0].value;
+        loc = document.getElementsByName("ploc")[0].value;
+        alert("이름 : " + mname + '\n' + "번호 : " + num + '\n' + "주소 : " + loc);
+    }
+
+</script>
+</html>
