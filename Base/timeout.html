@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머</title>
+</head>
+<body>
+    <input type="text" name="time" /><br/>
+    <input type="button" name="btnSetTime" value="타이머시작" onclick="getResult()" /><br/>
+</body>
+<script>
+    function getResult() {
+        //setTimeout(showText, 3000);
+        setTimeout(function() { //익명함수(Anonymous function)
+            document.getElementsByName("time")[0].value = "3초가 지났습니다.";  
+        }, 3000);
+    }
+    function showText() {
+        document.getElementsByName("time")[0].value = "3초가 지났습니다.";
+    }
+</script>
+</html>
