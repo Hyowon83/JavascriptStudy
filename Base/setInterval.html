@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<body>
+    <input type="button" name="btnStart" value="     시작     " onclick="doStart()">
+</body>
+<script>
+    let gn;
+    let timer;
+    function doStart() {
+        alert("타이머가 시작합니다.");
+        gn = 6;
+        timer = setInterval(showText, 1000);
+
+    }
+    function showText() {
+        gn -= 1;
+        document.getElementsByName("btnStart")[0].value = "      " + gn + "초      ";
+        if(gn === 0) {
+            doStop();
+        }
+    }
+    function doStop() {
+        clearInterval(timer);
+        document.getElementsByName("btnStart")[0].value = "     멈춤     ";
+    }
+</script>
+</html>
