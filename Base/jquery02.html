@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .style1 {
+        background-color: white;
+        color: red;
+        font-size: 12px;
+    }
+    .style2 {
+        background-color: yellowgreen;
+        color: blue;
+        font-size: 12px;
+    }
+</style>
+<body>
+    <input type="text" name="point" id="point" /><br/>
+    <input type="button" id="btnShow" value="SHOW" />
+    <input type="button" id="btnClear" value="CLEAR" /><br/>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+    $(document)
+    .ready(function() {
+        $('#point').val(50);
+        $('#btnClear').hide();
+    })
+    .on('click', '#btnShow', function() {
+        $('#point').val(100);
+        $(this).hide(); //fadeOut() 페이드는 시간 조절이 가능하다.
+        $('#btnClear').show(); //fadeIn()
+        // $('#point').css("background-color", "white");
+        $('#point').removeClass("style2");
+        $('#point').addClass("style1");
+    })
+    .on('click', '#btnClear', function() {
+        $('#point').val(999);
+        $('#btnShow').show();
+        $(this).hide();
+        // $('#point').css("background-color", "yellow");
+        $('#point').removeClass("style1");
+        $('#point').addClass("style2");
+    })
+    
+    </script>
+</html>
