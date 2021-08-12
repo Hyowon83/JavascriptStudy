@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+        <label for="mobile">모바일번호</label>
+        <input type="tel" name="mobile" id="mobile"><br/>
+        <label for="name">이름(실명)</label>
+        <input type="text" name="name" id="name"><br/>
+        <label for="gender">성별</label>
+        <div id="genderCheck">
+            <input type="radio" name="gender" id="male">남
+            <input type="radio" name="gender" id="female">여
+            <input type="radio" name="gender" id="alien">외계인<br/>
+        </div>
+        <label for="birth">생일</label>
+        <input type="date" name="birth" id="birth"><br/>
+        <label for="live">거주지역</label>
+        <select name="live" id="live" size="1">
+            <option value="1">-지역선택-</option>
+            <option value="seoul">서울</option>
+            <option value="gyeonggi">경기</option>
+            <option value="gangwon">강원</option>
+            <option value="chungnam">충남</option>
+            <option value="chungbuk">충북</option>
+            <option value="gyeongnam">경남</option>
+            <option value="gyeongbuk">경북</option>
+            <option value="busan">부산</option>
+            <option value="daegu">대구</option>
+            <option value="jeonnam">전남</option>
+            <option value="jeonbuk">전북</option>
+            <option value="gwangju">광주</option>
+            <option value="jeju">제주</option>
+        </select><br/>
+        <label for="interest">관심분야</label>
+        <input type="checkbox" name="interest" id="realEstate">부동산
+        <input type="checkbox" name="interest" id="stock">주식
+        <input type="checkbox" name="interest" id="fund">펀드
+        <input type="checkbox" name="interest" id="invest">투자
+        <input type="checkbox" name="interest" id="bond">채권
+        <input type="checkbox" name="interest" id="insurance">보험<br/>
+        <label for="hobby">취미</label>
+        <input type="checkbox" id="read" name="hobby" />독서
+        <input type="checkbox" id="movie" name="hobby" />영화감상
+        <input type="checkbox" id="riding" name="hobby" />사이클
+        <input type="checkbox" id="climbing" name="hobby" />등산
+        <input type="checkbox" name="hobby" id="golf">골프
+        <input type="checkbox" name="hobby" id="swim">수영
+        <input type="checkbox" name="hobby" id="diy">DIY
+        <input type="checkbox" name="hobby" id="game">게임<br/>
+        <label for="password">비밀번호</label>
+        <input type="password" name="password" id="password"><br/>
+        <label for="passwd">비밀번호확인</label>
+        <input type="password" name="passwd" id="passwd">
+        <button id="pwCheck">확인하기</button><small id="rightPw" style="color:white;">확인완료</small><br/>
+        <br/>
+        <button id="register">가입하기</button>
+        <button id="clear">초기화</button>
+    <br/><br/>
+    <div id="dvShow" style="background-color: aquamarine; width : 400px; height: 300px;">
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+    $(document)
+    .on('click', '#clear', function() {
+        $('#mobile').val("");
+        $('#name').val("");
+        $('input[name=interest]').prop('checked', false);
+        $('#birth').val("");
+        $('#live').val("1");
+        $('input[name=interest]').prop('checked', false);
+        $('input[name=hobby]').prop('checked', false);
+        $('#password').val("");
+        $('#passwd').val("");
+    })
+    .on('click', '#register', function() {
+        $('#rightPw').css('color', 'red');
+        a8 = $('#password').val();
+        a9 = $('#passwd').val();
+        if(a8 === "" || a9 === "") {
+            alert("비밀번호 확인을 눌러주세요.");
+        } else if(a8 === a9) {
+            a1 = $('#mobile').val();
+            a2 = $('#name').val();
+    
+            if($('#male').is(':checked')) {
+                a3 = 'male';
+            } else if($('#female').is(':checked')) {
+                a3 = 'female';
+            } else if($('#alien').is(':checked')) {
+                a3 = 'ailen'
+            } else {
+                a3 = '';
+            }
+    
+            a4 = $('#birth').val();
+            a5 = $('#live').val();
+            
+            a6 = '';
+            if($('#realEstate').is(':checked')) {
+                a6 += '부동산 ';
+            }
+            if($('#stock').is(':checked')) {
+                a6 += '주식 ';
+            }
+            if($('#fund').is(':checked')) {
+                a6 += '펀드 ';
+            }
+            if($('#bond').is(':checked')) {
+                a6 += '채권 ';
+            }
+            if($('#insurance').is(':checked')) {
+                a6 += '보험 ';
+            }
+            if($('#invest').is(':checked')) {
+                a6 += '투자 ';
+            }
+    
+            a7 = '';
+            if($('#read').is(':checked')) {
+                a7 += '독서 ';
+            }
+            if($('#movie').is(':checked')) {
+                a7 += '영화감상 ';
+            }
+            if($('#riding').is(':checked')) {
+                a7 += '사이클 ';
+            }
+            if($('#climbing').is(':checked')) {
+                a7 += '등산 ';
+            }
+            if($('#golf').is(':checked')) {
+                a7 += '골프 ';
+            }
+            if($('#swim').is(':checked')) {
+                a7 += '수영 ';
+            }
+            if($('#diy').is(':checked')) {
+                a7 += 'DIY ';
+            }
+            if($('#game').is(':checked')) {
+                a7 += '게임 ';
+            }
+            
+            a = "모바일번호 : " + a1 + "<br/>" + "이름(실명) : " + a2 + "<br/>" + "성별 : " + a3 + "<br/>" + "생일 : " + a4 + "<br/>" + "거주지역 : " + a5 + "<br/>" + "관심분야 : " + a6 + "<br/>" + "취미 : " + a7
+            $('#dvShow').html("<h4>가입완료</h4><br/>" + a);
+        } else {
+            alert("비밀번호 확인을 눌러주세요.");
+        }
+    })
+    .on('click', '#pwCheck' ,function() {
+        a8 = $('#password').val();
+        a9 = $('#passwd').val();
+        if(a8 === "" || a9 === "") {
+            alert("비밀번호를 다시 확인해주세요.");
+        } else if(a8 === a9) {
+            $('#rightPw').css('color', 'red');
+        } else {
+            alert("비밀번호를 다시 확인해주세요.");
+        }
+    })
+</script>
+</html>
