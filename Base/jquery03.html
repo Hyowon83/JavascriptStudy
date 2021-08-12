@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input으로 받은 값 나타내기</title>
+</head>
+<body>
+    text : <input type="text" id="txtName" /><br />
+    hidden : <input type="hidden" id="txtHidden" value="숨김"><br/>
+    radio : <input type="radio" id="male" name="gender" />남자<input type="radio" id="female" name="gender" />여자<br /><!-- name이 같으면 중복체크 불가 -->
+    number : <input type="number" id="txtNum" /><br />
+    checkbox : <input type="checkbox" id="read" name="hobby" />독서
+    <input type="checkbox" id="movie" name="hobby" />영화감상
+    <input type="checkbox" id="riding" name="hobby" />사이클
+    <input type="checkbox" id="climbing" name="hobby" />등산<br />
+    textarea : <br />
+    <textarea id="txtAddress" cols="60" rows="3"></textarea><br/>
+    select : <br />
+    <select size="5" id="selNation">
+        <option value="Korea">Korea</option>
+        <option value="USA">USA</option>
+        <option value="FR">France</option>
+        <option value="China">China</option>
+    </select><br /><br/>
+    <button id="btnShow">보기</button><br/>
+    <div id="dvShow" style="background-color: aquamarine; width : 300px; height: 200px;">
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+    $(document)
+    .on('click', '#btnShow', function() {
+        str1 = $('#txtName').val();
+        str2 = $('#txtHidden').val();
+        if($('#male').is(':checked')) {
+            str3 = 'male';
+        } else if($('#female').is(':checked')) {
+            str3 = 'female';
+        } else {
+            str3 = '';
+        }
+        str4 = $('#txtNum').val();
+        str5 = '';
+        if($('#movie').is(':checked')) {
+            str5 += '영화감상 ';
+        }
+        if($('#riding').is(':checked')) {
+            str5 += '사이클 '
+        }
+        if($('#read').is(':checked')) {
+            str5 += '독서 '
+        }
+        if($('#climbing').is(':checked')) {
+            str5 += '등산 '
+        }
+        str6 = $('#txtAddress').val();
+        str7 = $('#selNation').val();
+
+        str = str1 + '<br/>' + str2 + '<br/>' + str3 + '<br/>' + str4 + '<br/>' + str5 + '<br/>' + str6 + '<br/>' + str7
+        $('#dvShow').html(str);
+    })
+</script>
+</html>
