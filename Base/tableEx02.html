@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table 과제</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    th {
+        border: 1px solid white;
+        background-color: black;
+        color: yellow;
+    }
+    td {
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <input type="button" id="btnAdd" value="Add">
+    <table id="tbl">
+        <thead>
+            <th>이름</th>
+            <th>모바일</th>
+            <th>수학점수</th>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+    $(document)
+    .ready(function() {
+    })
+    .on('click', '#btnAdd', function() {
+        const yname = prompt("이름을 입력하세요.");
+        const mobile = prompt("모바일번호를 입력하세요.");
+        const point = prompt("수학점수를 입력하세요.", "0");
+        //1. undefined 2. null 3. ""
+        let name; // undefined 
+        let name2 = null; // null
+        let name3 = ""; // "" 
+        if (name3 === "") {
+
+        }
+        //$('#tbl').append('<tr><td>' + yname + '</td><td>' + mobile + '</td><td>' + point + '</td></tr>');
+        $("#tbody").append(`<tr><td>${yname}</td><td>${mobile}</td><td>${point}</td></tr>`);
+        return false;
+    })
+</script>
+</html>

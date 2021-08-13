@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table 연습</title>
+</head>
+<body>
+    <table border="1" id="tbl">
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td><input type="button" id="btnDelete" value="Delete"></td>
+            <td><input type="button" id="btnPrepend" value="Prepend"></td>
+            <td><input type="button" id="btnAppend" value="Append"></td>
+        </tr>        
+    </table>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+    $(document)
+    .ready(function() {
+    })
+    .on('click', '#btnAppend', function() {
+        $('#tbl').append('<tr><td>A</td><td>B</td><td>C</td></tr>');
+        return false;
+    })
+    .on('click', '#btnPrepend', function() {
+        n = 1;
+        $('#tbl').prepend('<tr><td>1</td><td>2</td><td>3</td></tr>');
+    })
+    .on('click', '#btnDelete', function() {
+        $('#tbl').find('tr:last').remove();
+        return false;
+    })
+</script>
+</html>

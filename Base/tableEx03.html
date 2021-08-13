@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td {
+        width: 80px;
+        height: 50px;
+        text-align: center;
+    }
+</style>
+<body>
+    <table border="1" id="tbl">
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </table>
+    <input type="button" id="btnSnake" value="Snake"><br/><br/>
+    <table border="1" id="tbl2">
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </table>
+    <input type="button" id="btnSnail" value="Snail">
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+    $(document)
+    .ready(function() {
+    })
+    .on('click', '#btnSnake', function() {
+        let a=0;
+        for(i = 0; i < 4; i++) {
+            if(i%2 === 1) {n = -1;}
+            else {n = 1;}
+            for(j = 0; j < 5; j++) {
+                //$('#tbl').find(`tr:eq(${i}) td:eq(${j})`).text(n++);
+                //$("#tbl").find("tr:eq(" + i + ") td:eq(" + j + ")").text(n++);
+                //$("#tbl").find("tr:eq(0)").find("td:eq(0)").text(1);
+                $(`#tbl tr:eq(${i}) td:eq(${j})`).text(a+=n);
+            }
+            if(i%2 === 1) {a += 4;}
+            else {a += 6;}
+        }
+        return false;
+    })
+    .on('click', '#btnSnail', function() {
+        //const num = prompt("숫자를 입력하세요.");
+        
+        //for(tr = 0; tr < num; tr++) {
+        //    $('#tbl2').append('<tr><td></td><td></td><td></td><td></td><td></td></tr>');
+        //}
+        let z = 0;
+        let n = 1;
+        for(i = 0; i < 5; i++) {
+            if(i < 5/2) {n = 1;}
+            else {n = -1;}
+            for(j = 0; j < 5; j++) {
+                $(`#tbl2 tr:eq(${i}) td:eq(${j})`).text(z+=n);
+            }
+
+        }
+        return false;
+    })
+</script>
+</html>

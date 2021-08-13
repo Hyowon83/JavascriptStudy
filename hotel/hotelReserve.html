@@ -49,12 +49,12 @@
                     </div>
                     <label for="roomli" style="float:left">객실 종류</label>
                     <select class="form-select" size="1" id="roomli">
-                        <option>-종류선택-</option>
-                        <option>패밀리룸</option>
-                        <option>스위트룸</option>
-                        <option>이벤트룸</option>
-                        <option>특실</option>
-                        <option>일반실</option>
+                        <option value="">-종류선택-</option>
+                        <option value="family">패밀리룸</option>
+                        <option value="suite">스위트룸</option>
+                        <option value="event">이벤트룸</option>
+                        <option value="special">특실</option>
+                        <option value="common">일반실</option>
                     </select><br />
                     
                     <button type="button" id="btnSearch" class="btn btn-lg btn-warning">검색</button>
@@ -131,10 +131,10 @@
                 </div>
                 <div class="d-flex w-100 align-items-center justify-content-between">
                     <label for="roomPrice" style="float:left">총 숙박비용</label>
-                    <small>1박 -원</small>
+                    <small id="oneDay">1박-원</small>
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="roomPrice">-박</span>
+                    <span class="input-group-text" id="roomPriceDay">-박</span>
                     <input type="text" class="form-control" id="roomPrice" style = "text-align:right" placeholder=", 없이 입력" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                     <span class="input-group-text" id="roomPrice">원</span>
                 </div>
@@ -190,6 +190,9 @@
       </div>
   </body>
   <script>
+    //let n=2;
+    //$('#roomPriceDay').text(`${n}박`);
+    //$('#oneDay').text(`1박 ${n}원`);
     $(".list-group-item").click(function(){
 
         var listItems = $(".list-group-item"); //Select all list items
