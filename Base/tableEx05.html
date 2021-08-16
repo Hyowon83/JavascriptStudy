@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td {
+        width: 80px;
+        height: 50px;
+        text-align: center;
+    }
+</style>
+<body>
+    <table border="1" id="tbl">
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </table><br/><br/>
+    <input type="text" id="txtNum">
+    <!-- <input type="button" value="Go" id="btnGo"> -->
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+    var bcolor;
+    let n = 1;
+    $(document)
+    .ready(function() {
+//        $('table tr').even().css('background-color', 'cyan');
+    })
+    .on('click', 'table tr td', function() {
+        if($(this).text() === "") {
+            $(this).text(n++);
+            $('#txtNum').trigger('click');
+        }
+        return false;
+    })
+    .on('click', '#txtNum', function() {
+        $(this).val(n);
+    })
+//    .on('mouseenter', 'table tr', function() {
+//        bcolor = $(this).css('background-color');
+//        console.log(bcolor);
+//        $(this).css('background-color', 'brown');
+//        return false;
+//    })
+//    .on('mouseleave','table tr', function() {
+//        $(this).css('background-color', bcolor);
+//        return false;
+//    })
+//    .on('click', 'table tr td', function() {
+//        if($(this).text() === "") {
+//            $(this).text(n++);
+//        }
+//    })
+</script>
+</html>
