@@ -21,14 +21,6 @@
         <tr><td></td><td></td><td></td><td></td><td></td></tr>
     </table>
     <input type="button" id="btnSnake" value="Snake"><br/><br/>
-    <table border="1" id="tbl2">
-        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td></tr>
-    </table>
-    <input type="button" id="btnSnail" value="Snail">
 </body>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
@@ -48,24 +40,6 @@
             }
             if(i%2 === 1) {a += 4;}
             else {a += 6;}
-        }
-        return false;
-    })
-    .on('click', '#btnSnail', function() {
-        //const num = prompt("숫자를 입력하세요.");
-        
-        //for(tr = 0; tr < num; tr++) {
-        //    $('#tbl2').append('<tr><td></td><td></td><td></td><td></td><td></td></tr>');
-        //}
-        let z = 0;
-        let n = 1;
-        for(i = 0; i < 5; i++) {
-            if(i < 5/2) {n = 1;}
-            else {n = -1;}
-            for(j = 0; j < 5; j++) {
-                $(`#tbl2 tr:eq(${i}) td:eq(${j})`).text(z+=n);
-            }
-
         }
         return false;
     })
