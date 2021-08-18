@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카페관리페이지</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="./menujs.js"></script>
+<style>
+    th {
+        border: 2px solid black;
+        width: 80px;
+        height: 50px;
+        font-size: 30px;
+    }
+    td {
+        border: none;
+        width: 400px;
+        text-align: left;
+        font-size: 24px;
+        vertical-align : top;
+    }
+</style>
+<body>
+    <table style="margin: auto;">
+        <thead>
+            <!-- th -->
+            <th>메뉴목록</th>
+            <th>주문목록</th>
+            <th>매출현황</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="6" style="border: 1px solid black; width: 400px; font-size: 24px;">
+                    <select name="menu" id="menu" size="23" style="width: 400px; font-size: 24px;">
+                        <option id="cafeLatte" value="3000">카페라떼 3000원</option>
+                        <option id="espresso" value="2000">에스프레소 2000원</option>
+                        <option id="americano" value="2500">아메리카노 2500원</option>
+                        <option id="cappucchino" value="3500">카푸치노 3500원</option>
+                        <option id="milkTea" value="3000">밀크티 3000원</option>
+                        <option id="smoothie" value="4000">스무디 4000원</option>
+                    </select>
+                </td>
+                <td style="border: 1px solid black; width: 400px; height: 450px; font-size: 24px;" id="orderList">
+                </td>
+                <td rowspan="6" style="border: 1px solid black; width: 400px; font-size: 24px;" id="sell">
+                </td>
+            </tr>
+            <!-- <tr><td></td></tr> -->
+            <tr>
+                <td style="text-align: center; border: none;">
+                    <div class="input-group-text">
+                        <span class="input-group-text">메뉴명</span>
+                        <input type="text" value="" name="menuName" id="menuName" style="width:300px; height:50px; font-size: 22px;" readonly>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none;">
+                    <div class="input-group-text">
+                        <span class="input-group-text">수량</span>
+                        <input type="number" value="" name="pieces" id="pieces" style="width:200px; height:50px; font-size: 22px;">
+                        <span class="input-group-text">잔</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none;">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">총액</span>
+                        <input type="text" value="" name="total" id="total" style="width:200px; height:50px; font-size: 22px;" readonly>
+                        <span class="input-group-text">원</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none;"><button id="add" style="width: 100px; height: 50px; font-size: 22px;">추가</button><button id="delete" style="width: 100px; height: 50px; font-size: 22px;">삭제</button></td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none;"><button id="order" style="width: 150px; height: 50px; font-size: 22px;">주문하기</button></td>
+            </tr>
+        </tbody>
+</body>
+
+<script>
+    
+
+</script>
+</html>
