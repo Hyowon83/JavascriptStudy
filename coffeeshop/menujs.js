@@ -27,7 +27,7 @@ $(document).ready(function(){
     })
     $('#milkTea').click(function() {
         clear();
-        $('#menuName').val("밀크티");
+        $('#menuName').val("밀크티"); 
         menu = "밀크티";
     })
     $('#smoothie').click(function() {
